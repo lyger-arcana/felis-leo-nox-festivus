@@ -6,7 +6,7 @@ function showPuzzle(text) {
         text = "Mrowl."
     }
 
-    document.getElementById("puzzle1").textContent=text;
+    document.getElementById("secret1").textContent=text;
 }
 
 
