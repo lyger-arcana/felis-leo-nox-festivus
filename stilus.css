@@ -1,5 +1,9 @@
 .puzzle {
-    border: 5px outset lightblue;
+    border: 2px outset lightblue;
     background-color: azure;
     text-align: center;
+    width: min-content;
+    margin: auto;
+    padding-left: 24px;
+    padding-right: 24px;
 }
