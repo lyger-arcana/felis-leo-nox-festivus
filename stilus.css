@@ -1,3 +1,25 @@
+.startText {
+    margin: auto; /* doesn't work for text on its own */
+    text-align: center;
+    white-space: pre-wrap;
+}
+
+.verifyBox {
+    /* border: 2px outset lightblue;
+    background-color: azure; */
+    text-align: center;
+    width: min-content;
+    margin: auto;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.verifyInput {
+    margin: auto;
+}
+
 .puzzle {
     border: 2px outset lightblue;
     background-color: azure;
@@ -6,4 +28,5 @@
     margin: auto;
     padding-left: 24px;
     padding-right: 24px;
+    display: none;
 }
