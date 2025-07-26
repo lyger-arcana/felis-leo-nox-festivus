@@ -52,7 +52,8 @@
 }    
 
 .inputBox {
-    border: 3px solid rgb(164 191 213 / 1);
+    /* border: 3px solid rgb(164 191 213 / 1); */
+    border: 3px solid rgb(from var(--blue-accent) r g b / 1);
     border-radius: 7px;
     width: min-content;
     margin: auto;
@@ -61,7 +62,7 @@
 .textInput {
     border: hidden;
     border-radius: 7px;
-    background-color: rgb(from var(--fur-light) r g b / 0.5);
+    background-color: rgb(from var(--fur-light) r g b / 0.3);
     width: min-content;
     padding-left:   6px;
     padding-right:  6px;
@@ -111,7 +112,7 @@
 }
 
 .puzzle3 {
-    border: 3px solid rgb(164 166 245 / 1);
+    border: 3px solid rgb(164 166 245 / 0.8);
     border-radius: 7px;
     background-color: rgb(213 154 166 / 0.4);
     text-align: center;
