@@ -126,37 +126,68 @@ function waitFor(ms) {
     });
 }
 
+async function fadeIn(textElement, ms) {
+    // let currOpacity = 0;
+    // for (let i = 0; i < ms; i += ms / 100) {
+    //     currOpacity += 0.05;
+    //     textElement.style.opacity = currOpacity;
+    //     await waitFor(ms / 100);
+    // }
+}
+
 function identifyUser() {
-    let startText = "Are you the birthday Lion?\n\nName this molecule to prove your identity.";
-    let solution = "chemistry";
-    document.getElementById("start").textContent=startText;
+    let start1Text = "Are you the birthday Lion?\n\nName this molecule to prove your identity.";
+    let start2Text = "~ Incipiat festum ~";
+    let solutionIUPAC = "4-hydroxy-3-methoxybenzaldehye";
+    let solutionCommon = "vanillin";
+    document.getElementById("start1").textContent=start1Text;
     
     let textInput = document.getElementById("textInput");
 
     textInput.addEventListener("keydown", async function (e) {
         if (e.key === "Enter" && !verified) {
-            if (textInput.value == solution
+            if (textInput.value.toLowerCase() == solutionIUPAC || 
+                textInput.value.toLowerCase() == solutionCommon || 
+                textInput.value == "Mrowl."
             ) {
-                startText = "Secrets await you, Lion.";
                 user = "Lion";
+                start1Text = "Secrets await you, Lion.";
             }
             else {
-                startText = "Probable non-Lion detected. Less fancy secrets await you."
+                start1Text = "Probable non-Lion detected. Less fancy secrets await you."
             }
-            document.getElementById("start").textContent=startText;
-            
             textInput.value = "";
             textInput.style.display = "none";
             inputBox.style.display = "none";
+            document.getElementById("start1").style.opacity = 0;
+            let textElement = null, currOpacity = 0, ms = 1200;
+            
+            // fadeIn(document.getElementById("start1"), 2000)
+            textElement = document.getElementById("start1")
+            textElement.textContent=start1Text;
+            currOpacity = 0;
+            for (let i = 0; i < ms; i += ms / 100) {
+                currOpacity += 0.025;
+                textElement.style.opacity = currOpacity;
+                await waitFor(ms / 100);
+            }
 
-            await waitFor(2000);
-
+            textElement = document.getElementById("start2")
+            textElement.textContent=start2Text;
+            currOpacity = 0;
+            ms = 1500;
+            // fadeIn(document.getElementById("start2"), 2000)
+            for (let i = 0; i < ms; i += ms / 100) {
+                currOpacity += 0.05;
+                textElement.style.opacity = currOpacity;
+                await waitFor(ms / 100);
+            }
+            
             textInput.style.display = "block";
             inputBox.style.display = "block";
             textInput.focus();
 
             // Input validation complete, setup puzzles & begin
-
 
             if (user == "Lion") {
                 unsolvedSecrets = lionSecrets;

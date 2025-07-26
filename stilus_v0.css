@@ -1,18 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+Mono');
 
-:root{
-    --main-border: rgb(116, 111, 117);
-    --blue-accent: rgb(164, 191, 213);
-    --blue-accent-dark: rgb(145, 155, 164);
-    --off-white-accent: rgb(230, 224, 215);
-    --fur-light: rgb(245, 219, 165);
-    --fur-neutral: rgb(224, 193, 104);
-    --fur-dark: rgb(198, 157, 80);
-    --fur-darker: rgb(188, 142, 68);
-}
-
 .page {
-    background-color: rgb(from var(--off-white-accent) r g b / 0.35);
+    background-color: rgb(from Orange r g b / .1);
     font-family: "Noto Sans Mono", "Lucida Console";
 }    
 
@@ -39,7 +28,7 @@
     margin: auto; /* doesn't work for text on its own */
     text-align: center;
     white-space: pre-wrap;
-    color: rgb(from DarkSlateGrey r g b / 0.85);
+    color: rgb(from DarkSlateGrey r g b / .85);
     opacity: 1.0;
 }    
 
@@ -47,12 +36,12 @@
     margin: auto; /* doesn't work for text on its own */
     text-align: center;
     white-space: pre-wrap;
-    color: rgb(from DarkSlateGrey r g b / 0.85);
+    color: rgb(from DarkSlateGrey r g b / .85);
     opacity: 0;
 }    
 
 .inputBox {
-    border: 3px solid rgb(164 191 213 / 1);
+    border: 3px solid rgb(from Turquoise r g b / .35);
     border-radius: 7px;
     width: min-content;
     margin: auto;
@@ -61,7 +50,7 @@
 .textInput {
     border: hidden;
     border-radius: 7px;
-    background-color: rgb(from var(--fur-light) r g b / 0.5);
+    background-color: Azure;
     width: min-content;
     padding-left:   6px;
     padding-right:  6px;
@@ -71,7 +60,7 @@
     text-align: center;
     font-family: Verdana;
     font-size: 95%;
-    color: rgb(from DarkSlateGrey r g b / 0.85);
+    color: rgb(from DarkSlateGrey r g b / .85);
 }    
 
 .textInput:focus {
@@ -79,9 +68,9 @@
 }    
 
 .puzzle1 {
-    border: 3px solid rgb(from var(--fur-neutral) r g b / 0.9);
+    border: 3px solid rgb(from Peru r g b / .5);
     border-radius: 7px;
-    background-color: rgb(from var(--fur-light) r g b / 0.6);
+    background-color: rgb(from Tomato r g b / .1);
     text-align: center;
     font-size: 110%;
     color: DarkSlateGrey;
@@ -95,9 +84,9 @@
 }
 
 .puzzle2 {
-    border: 3px solid rgb(from var(--blue-accent) r g b / 1);
+    border: 3px solid rgb(from CornflowerBlue r g b / .5);
     border-radius: 7px;
-    background-color: rgb(206 233 232 / 0.8);
+    background-color: rgb(from ForestGreen r g b / .1);
     text-align: center;
     font-size: 110%;
     color: DarkSlateGrey;
@@ -111,9 +100,9 @@
 }
 
 .puzzle3 {
-    border: 3px solid rgb(164 166 245 / 1);
+    border: 3px solid rgb(from DarkOrchid r g b / .25);
     border-radius: 7px;
-    background-color: rgb(213 154 166 / 0.4);
+    background-color: rgb(from LemonChiffon r g b / .5);
     text-align: center;
     font-size: 110%;
     color: DarkSlateGrey;
