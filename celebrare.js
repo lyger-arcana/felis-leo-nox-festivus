@@ -146,9 +146,9 @@ function identifyUser() {
 
     textInput.addEventListener("keydown", async function (e) {
         if (e.key === "Enter" && !verified) {
-            if (textInput.value.toLowerCase() == solutionIUPAC || 
-                textInput.value.toLowerCase() == solutionCommon || 
-                textInput.value == "Mrowl."
+            if (textInput.value.trim().toLowerCase() == solutionIUPAC || 
+                textInput.value.trim().toLowerCase() == solutionCommon || 
+                textInput.value.trim() == "Mrowl."
             ) {
                 user = "Lion";
                 start1Text = "Secrets await you, Lion.";

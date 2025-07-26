@@ -6,13 +6,14 @@
     --blue-accent-dark: rgb(145, 155, 164);
     --off-white-accent: rgb(230, 224, 215);
     --fur-light: rgb(245, 219, 165);
+    --fur-light-complement: rgb(165 190 245);
     --fur-neutral: rgb(224, 193, 104);
     --fur-dark: rgb(198, 157, 80);
     --fur-darker: rgb(188, 142, 68);
 }
 
 .page {
-    background-color: rgb(from var(--off-white-accent) r g b / 0.35);
+    background-color: rgb(from var(--fur-light) r g b / 0.4);
     font-family: "Noto Sans Mono", "Lucida Console";
 }    
 
@@ -62,7 +63,7 @@
 .textInput {
     border: hidden;
     border-radius: 7px;
-    background-color: rgb(from var(--fur-light) r g b / 0.3);
+    background-color: rgb(244 249 251 / 0.8);
     width: min-content;
     padding-left:   6px;
     padding-right:  6px;
@@ -72,7 +73,7 @@
     text-align: center;
     font-family: Verdana;
     font-size: 95%;
-    color: rgb(from DarkSlateGrey r g b / 0.85);
+    color: rgb(from DarkSlateGrey r g b / 0.75);
 }    
 
 .textInput:focus {
@@ -80,12 +81,12 @@
 }    
 
 .puzzle1 {
-    border: 3px solid rgb(from var(--fur-neutral) r g b / 0.9);
+    border: 3px solid rgb(from var(--fur-neutral) r g b / 0.8);
     border-radius: 7px;
     background-color: rgb(from var(--fur-light) r g b / 0.6);
     text-align: center;
     font-size: 110%;
-    color: DarkSlateGrey;
+    color: rgb(from DarkSlateGrey r g b / 0.9);
     width: 30%;
     margin: auto;
     padding-left:   18px;
@@ -97,11 +98,12 @@
 
 .puzzle2 {
     border: 3px solid rgb(from var(--blue-accent) r g b / 1);
+    /* border: 3px solid rgb(from var(--fur-light-complement) r g b / 0.5); */
     border-radius: 7px;
     background-color: rgb(206 233 232 / 0.8);
     text-align: center;
     font-size: 110%;
-    color: DarkSlateGrey;
+    color: rgb(from DarkSlateGrey r g b / 0.9);;
     width: 30%;
     margin: auto;
     padding-left:   18px;
@@ -112,12 +114,15 @@
 }
 
 .puzzle3 {
-    border: 3px solid rgb(164 166 245 / 0.8);
+    /* border: 3px solid rgb(164 166 245 / 0.5); */
+    /* border: 3px solid rgb(98 80 198 / 0.4); */
+    /* border: 3px solid rgb(144 132 215 / 0.5); */
+    border: 3px solid rgb(175 166 226 / 0.66);
     border-radius: 7px;
     background-color: rgb(213 154 166 / 0.4);
     text-align: center;
     font-size: 110%;
-    color: DarkSlateGrey;
+    color: rgb(from DarkSlateGrey r g b / 0.9);;
     width: 30%;
     margin: auto;
     padding-left:   18px;
