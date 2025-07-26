@@ -127,16 +127,15 @@ function waitFor(ms) {
 }
 
 function identifyUser() {
-    let startText = "Are you the birthday Lion?\n\nName this substance to prove your identity."
-    let solution = "chemistry"
+    let startText = "Are you the birthday Lion?\n\nName this molecule to prove your identity.";
+    let solution = "chemistry";
     document.getElementById("start").textContent=startText;
     
     let textInput = document.getElementById("textInput");
 
     textInput.addEventListener("keydown", async function (e) {
         if (e.key === "Enter" && !verified) {
-            if (textInput.value == "Mrowl." || 
-                textInput.value == solution
+            if (textInput.value == solution
             ) {
                 startText = "Secrets await you, Lion.";
                 user = "Lion";
