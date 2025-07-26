@@ -1,32 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+Mono');
+
+.page {
+    background-color: rgb(from Orange r g b / .1);
+    font-family: "Noto Sans Mono", "Lucida Console";
+}
+
 .startText {
     margin: auto; /* doesn't work for text on its own */
     text-align: center;
     white-space: pre-wrap;
+    color: rgb(from DarkSlateGrey r g b / .85);
+;
+    /* padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px; */
 }
 
-.verifyBox {
-    /* border: 2px outset lightblue;
-    background-color: azure; */
-    text-align: center;
+.inputBox {
+    border: 3px solid rgb(from Turquoise r g b / .35);
+    border-radius: 7px;
     width: min-content;
     margin: auto;
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-top: 6px;
+}
+
+.textInput {
+    border: hidden;
+    border-radius: 7px;
+    background-color: Azure;
+    width: min-content;
+    padding-left:   6px;
+    padding-right:  6px;
+    padding-top:    6px;
     padding-bottom: 6px;
-}
-
-.verifyInput {
     margin: auto;
-}
-
-.puzzle {
-    border: 2px outset lightblue;
-    background-color: azure;
     text-align: center;
-    width: min-content;
+    font-family: Verdana;
+    font-size: 95%;
+    color: rgb(from DarkSlateGrey r g b / .85);
+}
+
+.textInput:focus {
+    outline: none;
+}
+
+.birthdayLion {
+    opacity: 0.6;
+    text-align: center;
+}
+
+.birthdayLink:link {
+    text-decoration: none;
+}
+.birthdayLink:visited {
+    text-decoration: none;
+}
+.birthdayLink:hover {
+    text-decoration: none;
+}
+.birthdayLink:active {
+    text-decoration: none;
+}
+
+.puzzle1 {
+    border: 3px solid rgb(from Peru r g b / .5);
+    border-radius: 7px;
+    background-color: rgb(from Tomato r g b / .1);
+    text-align: center;
+    font-size: 110%;
+    color: DarkSlateGrey;
+    width: 30%;
     margin: auto;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left:   18px;
+    padding-right:  18px;
+    padding-top:    12px;
+    padding-bottom: 12px;
+    display: none;
+}
+
+.puzzle2 {
+    border: 3px solid rgb(from CornflowerBlue r g b / .5);
+    border-radius: 7px;
+    background-color: rgb(from ForestGreen r g b / .1);
+    text-align: center;
+    font-size: 110%;
+    color: DarkSlateGrey;
+    width: 30%;
+    margin: auto;
+    padding-left:   18px;
+    padding-right:  18px;
+    padding-top:    12px;
+    padding-bottom: 12px;
+    display: none;
+}
+
+.puzzle3 {
+    border: 3px solid rgb(from DarkOrchid r g b / .25);
+    border-radius: 7px;
+    background-color: rgb(from LemonChiffon r g b / .5);
+    text-align: center;
+    font-size: 110%;
+    color: DarkSlateGrey;
+    width: 30%;
+    margin: auto;
+    padding-left:   18px;
+    padding-right:  18px;
+    padding-top:    12px;
+    padding-bottom: 12px;
     display: none;
 }

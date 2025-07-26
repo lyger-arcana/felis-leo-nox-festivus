@@ -8,42 +8,51 @@
     </title>
 
     <link rel="stylesheet" href="stilus.css">
-
+    <link rel="icon" type="image/x-icon" href="Felis-leo.ico">
 </head>
 
-<body>
+<body class="page">
+    <br>
+    <div class="birthdayLion" id="birthdayLion">
+        <a class="birthdayLink" href="Felis-leo.ico" target="_blank">🍰</a>
+    </div>
     <br>
     <p class="startText" id="start"></p>
     </p>
-    <div class="verifyBox" id="verifyBox">
+
+    <div class="puzzle puzzle1" id="puzzle1">
+        <p id="secret1"></p>
+    </div>
+    <br>
+    <div class="puzzle puzzle2" id="puzzle2">
+        <p id="secret2"></p>
+    </div>
+    <br>
+    <div class="puzzle puzzle3" id="puzzle3">
+        <p id="secret3"></p>
+    </div>
+    <br>
+    <!-- <div class="lion puzzle" id="puzzle4">
+        <p id="secret4"></p>
+    </div>
+    <br>
+    <div class="lion puzzle" id="puzzle5">
+        <p id="secret5"></p>
+    </div>
+    <br> -->
+    
+    <div class="inputBox" id="inputBox">
         <input
             type="text"
-            id="verifyInput"
+            id="textInput"
             required="true"
             autofocus="true"
-            class="verifyBox"
+            class="textInput"
             placeholder=""
         >
     </div>
     <br>
 
-    <div class="lion puzzle" id="puzzle1">
-        <p id="secret1"></p>
-    </div>
-    <div class="lion puzzle" id="puzzle2">
-        <p id="secret2"></p>
-    </div>
-    <div class="lion puzzle" id="puzzle3">
-        <p id="secret3"></p>
-    </div>
-    <!-- <div class="lion puzzle" id="puzzle4">
-        <p id="secret4"></p>
-    </div>
-    <div class="lion puzzle" id="puzzle5">
-        <p id="secret5"></p>
-    </div> -->
-    <br>
-    
     <script src="celebrare.js"></script>
 
 </body>
