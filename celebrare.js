@@ -59,7 +59,7 @@ let verified = false;
 let lionSecrets = [];
 
 let plantSecret = new Secret(
-    "cattail",
+    "cattAil",
     [
         "This fluffy riparian feline ap",
         new Secret(
@@ -88,7 +88,7 @@ let plantSecret = new Secret(
 lionSecrets.push(plantSecret);
 
 let advancedPlantSecret = new Secret(
-    "Ericaceae",
+    "ERicaceae",
     [
         new Secret(
             "Plant",
@@ -128,6 +128,68 @@ let advancedPlantSecret = new Secret(
     ]
 )
 lionSecrets.push(advancedPlantSecret);
+
+let soffSecret = new Secret(
+    "JakkOb",
+    [
+        "aka ",
+        new Secret(
+            "L",
+            [
+                "opposite of dextrorotatory, in short"
+            ]
+        ),
+        new Secret(
+            "ion",
+            [
+                "colorful states of tran",
+                new Secret (
+                    "sit",
+                    [
+                        "let ______ in the f",
+                        new Secret (
+                            "ridge",
+                            [
+                                "an exten",
+                                new Secret(
+                                    "ded",
+                                    [
+                                        "m",
+                                        new Secret(
+                                            "ost",
+                                            [
+                                                "musical accompaniment to most animated series or films, sometimes on CD"
+                                            ]
+                                        ),
+                                        " furs after a con or big party night"
+                                    ]
+                                ),
+                                ", connected ",
+                                new Secret(
+                                    "top",
+                                    [
+                                        "a good variety is gentle soft dom"
+                                    ]
+                                ),
+                                " of a mountain range"
+                            ]
+                        ),
+                        " overnight"
+                    ]
+                ),
+                "ion meta",
+                new Secret(
+                    "ls",
+                    [
+                        "show dir contents"
+                    ]
+                ),
+                "; cat is a type of this"
+            ]
+        )
+    ]
+)
+lionSecrets.push(soffSecret);
 
 let creatureSecrets = [];
 
@@ -261,6 +323,8 @@ function identifyUser() {
 
             // Input validation complete, setup puzzles & begin
 
+            // let numSecrets = 0;
+
             if (user == "Lion") {
                 unsolvedSecrets = lionSecrets;
 
@@ -268,10 +332,8 @@ function identifyUser() {
                 // debugger;
                 for (let i = 0; i < puzzles.length; i++) {
                     puzzles[i].style.display = "block";
-                    if (i < 2) {
-                        puzzles[i].textContent = unsolvedSecrets[i].inWriting();
-                        unsolvedSecrets[i].parentDiv = puzzles[i];
-                    }
+                    puzzles[i].textContent = unsolvedSecrets[i].inWriting();
+                    unsolvedSecrets[i].parentDiv = puzzles[i];
                 }
             }
             else {
