@@ -111,7 +111,7 @@ let advancedPlantSecret = new Secret(
                 new Secret(
                     "homo",
                     [
-                        '"No ______, bro!", lo',
+                        '"No ______, bro!" - lo',
                         new Secret(
                             "vin",
                             [
@@ -193,7 +193,9 @@ lionSecrets.push(soffSecret);
 
 let creatureSecrets = [];
 
-// creatureSecrets go here
+// let nomSecret = new Secret(
+
+// )
 
 let unsolvedSecrets = []; // a set of either lion or creature secrets
 let activeSecrets = []; // the set of all active secrets from an entire set

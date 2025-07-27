@@ -219,4 +219,8 @@
     .puzzle3 {
         width: 80%;
     }
+
+    .guess {
+        width: 88%;
+    }
 }
