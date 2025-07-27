@@ -193,9 +193,54 @@ lionSecrets.push(soffSecret);
 
 let creatureSecrets = [];
 
-// let nomSecret = new Secret(
-
-// )
+let nomSecret = new Secret(
+    "croissants",
+    [
+        "C",
+        new Secret(
+            "lassi",
+            [
+                "drink with an i",
+                new Secret (
+                    "con",
+                    [
+                        "the type of event a furry is most likely to travel to"
+                    ]
+                ),
+                "ic mango flavor"
+            ]
+        ),
+        "c French pastries where the dough typically has at least 27 layers, generally for",
+        new Secret(
+            "med",
+            [
+                "common median setting for mixers and stoves"
+            ]
+        ),
+        " using either envelope or book ",
+        new Secret(
+            "fold",
+            [
+                "around the outside and th",
+                new Secret(
+                    "rough",
+                    [
+                        new Secret (
+                            "NSFW",
+                            [
+                                'the reality of most situations that are "Safe For Werewolves"'
+                            ]
+                        ),
+                        " art suggests lots of furs like it ______"
+                    ]
+                ),
+                " the middle - to gently do this to whipped egg whites or cream"
+            ]
+        ),
+        "s."
+    ]
+)
+creatureSecrets.push(nomSecret);
 
 let unsolvedSecrets = []; // a set of either lion or creature secrets
 let activeSecrets = []; // the set of all active secrets from an entire set
@@ -325,21 +370,22 @@ function identifyUser() {
 
             // Input validation complete, setup puzzles & begin
 
-            // let numSecrets = 0;
+            let numSecrets = 0;
 
             if (user == "Lion") {
                 unsolvedSecrets = lionSecrets;
-
-                let puzzles = document.getElementsByClassName("puzzle");
+                numSecrets = 3;
                 // debugger;
-                for (let i = 0; i < puzzles.length; i++) {
-                    puzzles[i].style.display = "block";
-                    puzzles[i].textContent = unsolvedSecrets[i].inWriting();
-                    unsolvedSecrets[i].parentDiv = puzzles[i];
-                }
             }
             else {
                 unsolvedSecrets = creatureSecrets;
+                numSecrets = 1;
+            }
+            let puzzles = document.getElementsByClassName("puzzle");
+            for (let i = 0; i < numSecrets; i++) {
+                puzzles[i].style.display = "block";
+                puzzles[i].textContent = unsolvedSecrets[i].inWriting();
+                unsolvedSecrets[i].parentDiv = puzzles[i];
             }
             
             verified = true;
