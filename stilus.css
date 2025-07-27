@@ -74,7 +74,7 @@
     display: block;
     opacity: 0.69;
     width: 30%;
-    object-fit: contain;
+    object-fit: cover;
     /* overflow: hidden; At some point look more into the difference, see https://stackoverflow.com/questions/16177707/avoid-stretch-on-image-css */
 
     /* To allow the image to scale down, but never scale up larger than original size */
