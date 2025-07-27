@@ -73,10 +73,10 @@
     margin: auto;
     display: block;
     opacity: 0.69;
-    width: 10%;
+    width: 30%;
 
     /* To allow the image to scale down, but never scale up larger than original size */
-    max-width: 100%;
+    max-width: 200px;
     height: auto;
 
     /* Also useful info: https://www.w3schools.com/css/css3_images.asp */
@@ -95,7 +95,6 @@
     border-radius: 7px;
     background-color: rgb(244 249 251 / 0.8);
     width: 100%;
-    min-width: 300 px;
     box-sizing: border-box;
     padding-left:   6px;
     padding-right:  6px;
@@ -195,4 +194,10 @@
     /* margin: auto; */
     text-align: left;
     white-space-collapse: preserve;
+}
+
+@media screen and (max-width: 600px) {
+    .chemistry {
+        width: 80%;
+    }
 }
