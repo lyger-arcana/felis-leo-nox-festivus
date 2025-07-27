@@ -28,6 +28,7 @@
 }
 .birthdayLion:active {
     text-decoration: none;
+    user-select: none;
 }
 
 .birthdayLink:link {
