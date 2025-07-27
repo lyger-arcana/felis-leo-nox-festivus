@@ -87,7 +87,47 @@ let plantSecret = new Secret(
 )
 lionSecrets.push(plantSecret);
 
-// volcanic soil, ericaceae
+let advancedPlantSecret = new Secret(
+    "Ericaceae",
+    [
+        new Secret(
+            "Plant",
+            [
+                "Furry Foliage is this type of chat"
+            ]
+        ),
+        "s in this taxonomic group include ",
+        new Secret(
+            "several",
+            [
+                "just one extra letter and one swap away from a twimst-y sub-Saharan African cat"
+            ]
+        ),
+        " that thrive in volcanic soils and old growth ",
+        new Secret(
+            "fore",
+            [
+                "preceding or preliminary, not to be confused with its quaternary ",
+                new Secret(
+                    "homo",
+                    [
+                        '"No ______, bro!", lo',
+                        new Secret(
+                            "vin",
+                            [
+                                "______ Santo, and technically all other French & Italian styles"
+                            ]
+                        ),
+                        "gly and naively"
+                    ]
+                ),
+                "phone"
+            ]
+        ),
+        "sts in the PNW, as well as neotropical blueberries."
+    ]
+)
+lionSecrets.push(advancedPlantSecret);
 
 let creatureSecrets = [];
 
@@ -105,7 +145,16 @@ function addGuess(guess, completeHint) {
     newP.classList.add("guess");
     newP.appendChild(newTextNode);
 
-    document.getElementById("guessBox").appendChild(newP);
+    let guessBox = document.getElementById("guessBox");
+
+    let currGuesses = guessBox.children;
+    if (currGuesses.length == 0) {
+        guessBox.appendChild(newP); // inserts at the end by default
+    }
+    else {
+        guessBox.insertBefore(newP, currGuesses[0])
+    }
+
     // document.getElementById("guessBox").appendChild(document.createElement("br"));
 }
 
@@ -132,6 +181,7 @@ function findActiveSecrets(currSecret){
 }
 
 function beginDeciphering(unsolvedSecrets) {
+    // debugger; resolve [object object] when compiling finished secrets, and make guesses case insensitive
     for (let majorSecret of unsolvedSecrets) {
         findActiveSecrets(majorSecret);
     }
@@ -215,9 +265,10 @@ function identifyUser() {
                 unsolvedSecrets = lionSecrets;
 
                 let puzzles = document.getElementsByClassName("puzzle");
+                // debugger;
                 for (let i = 0; i < puzzles.length; i++) {
                     puzzles[i].style.display = "block";
-                    if (i == 0) {
+                    if (i < 2) {
                         puzzles[i].textContent = unsolvedSecrets[i].inWriting();
                         unsolvedSecrets[i].parentDiv = puzzles[i];
                     }
@@ -231,22 +282,30 @@ function identifyUser() {
             beginDeciphering(unsolvedSecrets);
         }
         else if (e.key === "Enter" && verified) {
-            let guess = textInput.value;
+            let guess = textInput.value.toLowerCase();
             // debugger;
 
             for (let active of activeSecrets) {
-                if (guess == active.answer) {
+                if (guess == active.answer.toLowerCase()) {
                     if (guesses.size == 0) {
                         document.getElementById("guessBox").style.display = "block";
                     }
                     // record the guess
                     let completeHint = "[";
                     let hints = active.retrieveHints();
-                    for (let hint of hints) {
-                        completeHint += hint;
+                    for (let hint of hints) { // TODO: refactor this into a function
+                        if (typeof hint == "string") {
+                            completeHint += hint;
+                        }
+                        else if (hint instanceof Secret) { // we *should* have an object at this point...
+                            completeHint += hint.inWriting();
+                        }
+                        else {
+                            console.log("Error: unexpected data type in hintsList.\n");
+                        }
                     }
                     completeHint += "]";
-                    addGuess(guess, completeHint);
+                    addGuess(active.answer, completeHint); // use active.answer instead of guess to get proper formatting
 
                     // mark as solved
                     active.solved = true;
@@ -287,5 +346,4 @@ window.onload = incipiatFestum();
 function showBirthdayLion() {
     document.getElementById("surpriseLion").style.display = "block";
 }
-debugger;
 document.getElementById("birthdayLion").onclick = showBirthdayLion;
