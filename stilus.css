@@ -74,7 +74,7 @@
     display: block;
     opacity: 0.69;
     width: 30%;
-    object-fit: contain;
+    object-fit: cover;
     max-width: 200px;
     /* height: auto; */
 }
