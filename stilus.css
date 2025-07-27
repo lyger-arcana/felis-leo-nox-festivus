@@ -21,6 +21,7 @@
     opacity: 0.6;
     text-align: center;
     font-size: x-large;
+    cursor: pointer;
 }
 
 .birthdayLink:link {
@@ -34,6 +35,13 @@
 }
 .birthdayLink:active {
     text-decoration: none;
+}
+
+.surpriseLion {
+    display: none;
+    margin: auto;
+    opacity: 0.6;
+    padding: none;
 }
 
 .start1Text {
@@ -50,13 +58,26 @@
     white-space: pre-wrap;
     color: rgb(from DarkSlateGrey r g b / 0.85);
     opacity: 0;
-}    
+}
+
+.chemistry {
+    margin: auto;
+    display: block;
+    opacity: 0.69;
+    width: 10%;
+
+    /* To allow the image to scale down, but never scale up larger than original size */
+    max-width: 100%;
+    height: auto;
+
+    /* Also useful info: https://www.w3schools.com/css/css3_images.asp */
+}
 
 .inputBox {
     /* border: 3px solid rgb(164 191 213 / 1); */
     border: 3px solid rgb(from var(--blue-accent) r g b / 1);
     border-radius: 7px;
-    width: min-content;
+    width: 25%;
     margin: auto;
 }    
 
@@ -64,7 +85,8 @@
     border: hidden;
     border-radius: 7px;
     background-color: rgb(244 249 251 / 0.8);
-    width: min-content;
+    width: 100%;
+    box-sizing: border-box;
     padding-left:   6px;
     padding-right:  6px;
     padding-top:    6px;
@@ -103,7 +125,7 @@
     background-color: rgb(206 233 232 / 0.8);
     text-align: center;
     font-size: 110%;
-    color: rgb(from DarkSlateGrey r g b / 0.9);;
+    color: rgb(from DarkSlateGrey r g b / 0.9);
     width: 30%;
     margin: auto;
     padding-left:   18px;
@@ -122,7 +144,7 @@
     background-color: rgb(213 154 166 / 0.4);
     text-align: center;
     font-size: 110%;
-    color: rgb(from DarkSlateGrey r g b / 0.9);;
+    color: rgb(from DarkSlateGrey r g b / 0.9);
     width: 30%;
     margin: auto;
     padding-left:   18px;
@@ -130,4 +152,37 @@
     padding-top:    12px;
     padding-bottom: 12px;
     display: none;
+}
+
+.guessBox {
+    /* border: 3px solid rgb(175 166 226 / 0.66); */
+    /* border-radius: 7px; */
+    /* background-color: rgb(213 154 166 / 0.3); */
+    /* text-align: left; */
+    font-size: 110%;
+    color: rgb(from DarkSlateGrey r g b / 0.9);
+    width: 32.5%;
+    margin: auto;
+    /* padding-left:   18px;
+    padding-right:  18px;
+    padding-top:    12px;
+    padding-bottom: 12px; */
+    display: none;
+}
+
+.guess {
+    /* border: 3px transparent rgb(190 245 165 / 1); */
+    border-radius: 7px;
+    background-color: rgb(190 245 165 / 0.8);
+    padding-left:   18px;
+    padding-right:  18px;
+    padding-top:    12px;
+    padding-bottom: 12px;
+    /* width: max-content; don't use this here; it will cause text to overrun instead of wrap */
+    
+    /* without this, with extra <br>, it seems to add extra vertical space between p elements,
+    but without extra <br> elements, with it omitted, there's spacing between them */
+    /* margin: auto; */
+    text-align: left;
+    white-space-collapse: preserve;
 }

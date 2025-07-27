@@ -18,6 +18,10 @@ class Secret {
             }
         }
     }
+
+    retrieveHints() {
+        return this.hintsList;
+    }
     
     parseSecrets(hintString) {
         // To be implemented at a future time
@@ -78,10 +82,12 @@ let plantSecret = new Secret(
                 "d for normies"
             ]
         ),
-        "s in Animalia, but can also be found in Plantae."
+        "s as part of Animalia, but can also be found in Plantae."
     ]
 )
 lionSecrets.push(plantSecret);
+
+// volcanic soil, ericaceae
 
 let creatureSecrets = [];
 
@@ -89,6 +95,19 @@ let creatureSecrets = [];
 
 let unsolvedSecrets = []; // a set of either lion or creature secrets
 let activeSecrets = []; // the set of all active secrets from an entire set
+let guesses = new Map();
+
+function addGuess(guess, completeHint) {
+    let guessStr = completeHint + "  " + guess; // need to use white-space-collapse: preserve in css for this to work -> HTML behavior
+    let newTextNode = document.createTextNode(guessStr);
+
+    let newP = document.createElement("p");
+    newP.classList.add("guess");
+    newP.appendChild(newTextNode);
+
+    document.getElementById("guessBox").appendChild(newP);
+    // document.getElementById("guessBox").appendChild(document.createElement("br"));
+}
 
 function findTop(currSecret) {
     if (currSecret.parentSecret == null){
@@ -138,7 +157,7 @@ async function fadeIn(textElement, ms) {
 function identifyUser() {
     let start1Text = "Are you the birthday Lion?\n\nName this molecule to prove your identity.";
     let start2Text = "~ Incipiat festum ~";
-    let solutionIUPAC = "4-hydroxy-3-methoxybenzaldehye";
+    let solutionIUPAC = "4-hydroxy-3-methoxybenzaldehyde";
     let solutionCommon = "vanillin";
     document.getElementById("start1").textContent=start1Text;
     
@@ -156,9 +175,12 @@ function identifyUser() {
             else {
                 start1Text = "Probable non-Lion detected. Less fancy secrets await you."
             }
+            document.getElementById("aldehyde").style.display = "none";
             textInput.value = "";
             textInput.style.display = "none";
+            textInput.style.width = "min-content";
             inputBox.style.display = "none";
+            inputBox.style.width = "min-content";
             document.getElementById("start1").style.opacity = 0;
             let textElement = null, currOpacity = 0, ms = 1200;
             
@@ -214,6 +236,18 @@ function identifyUser() {
 
             for (let active of activeSecrets) {
                 if (guess == active.answer) {
+                    if (guesses.size == 0) {
+                        document.getElementById("guessBox").style.display = "block";
+                    }
+                    // record the guess
+                    let completeHint = "[";
+                    let hints = active.retrieveHints();
+                    for (let hint of hints) {
+                        completeHint += hint;
+                    }
+                    completeHint += "]";
+                    addGuess(guess, completeHint);
+
                     // mark as solved
                     active.solved = true;
 
@@ -248,8 +282,10 @@ function incipiatFestum(){
     identifyUser();
 }
 
-// The fun part of the script
-
-
-
 window.onload = incipiatFestum();
+
+function showBirthdayLion() {
+    document.getElementById("surpriseLion").style.display = "block";
+}
+debugger;
+document.getElementById("birthdayLion").onclick = showBirthdayLion;
