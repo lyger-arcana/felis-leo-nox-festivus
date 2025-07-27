@@ -15,6 +15,8 @@
 .page {
     background-color: rgb(from var(--fur-light) r g b / 0.4);
     font-family: "Noto Sans Mono", "Lucida Console";
+    /* overflow: hidden; */
+    overflow-y: scroll;
 }    
 
 .birthdayLion {
@@ -22,6 +24,9 @@
     text-align: center;
     font-size: x-large;
     cursor: pointer;
+}
+.birthdayLion:hover {
+    text-decoration: none;
 }
 
 .birthdayLink:link {
@@ -42,6 +47,8 @@
     margin: auto;
     opacity: 0.6;
     padding: none;
+    border: none;
+    size: 50%;
 }
 
 .start1Text {
