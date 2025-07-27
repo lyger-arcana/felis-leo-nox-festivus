@@ -24,7 +24,7 @@
     text-align: center;
     font-size: x-large;
     cursor: pointer;
-    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 .birthdayLion:active {
     text-decoration: none;
