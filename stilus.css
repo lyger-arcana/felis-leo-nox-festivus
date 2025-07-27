@@ -95,6 +95,7 @@
     border-radius: 7px;
     background-color: rgb(244 249 251 / 0.8);
     width: 100%;
+    min-width: 300 px;
     box-sizing: border-box;
     padding-left:   6px;
     padding-right:  6px;
