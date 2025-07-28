@@ -392,7 +392,7 @@ function identifyUser() {
             beginDeciphering(unsolvedSecrets);
         }
         else if (e.key === "Enter" && verified) {
-            let guess = textInput.value.toLowerCase();
+            let guess = textInput.value.trim().toLowerCase();
             // debugger;
 
             for (let active of activeSecrets) {
